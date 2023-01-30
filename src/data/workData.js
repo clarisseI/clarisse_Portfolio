@@ -38,49 +38,4 @@ export const Works = [
     demo: "https://clarissei-daytravel.netlify.app/",
     github: "https://github.com/clarisseI/daytravel",
   },
-  {
-    id: 4,
-    name: "Sidebar Menu",
-
-    description:
-      "A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-    tags: ["react", "styledComponents", "react-router"],
-
-    demo: "https://react-sidebar.vercel.app/",
-    github: "https://github.com/codebucks27/react-sidebar",
-  },
-  {
-    id: 5,
-    name: "Sidebar Menu",
-
-    description:
-      "A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-    tags: ["react", "styledComponents", "react-router"],
-
-    demo: "https://react-sidebar.vercel.app/",
-    github: "https://github.com/codebucks27/react-sidebar",
-  },
-  {
-    id: 6,
-    name: "Sidebar Menu",
-
-    description:
-      "A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-    tags: ["react", "styledComponents", "react-router"],
-
-    demo: "https://react-sidebar.vercel.app/",
-    github: "https://github.com/codebucks27/react-sidebar",
-  },
-
-  {
-    id: 7,
-    name: "Sidebar Menu",
-
-    description:
-      "A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-    tags: ["react", "styledComponents", "react-router"],
-
-    demo: "https://react-sidebar.vercel.app/",
-    github: "https://github.com/codebucks27/react-sidebar",
-  },
 ];

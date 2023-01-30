@@ -19,16 +19,25 @@ function App() {
 
       <ThemeProvider theme={lightTheme}>
         {/* For framer-motion animation on page change! */}
-
+        {/* Changed prop from exitBefore to mode */}
         <AnimatePresence mode="wait">
+          {/* Changed Switch to Routes */}
+
           <Routes key={location.pathname} location={location}>
-            <Route exact path="/" element={<Main />} />
+            {/* Changed component to element */}
 
-            <Route exact path="/about" element={<AboutPage />} />
-            <Route exact path="/courses" element={<CoursesPage />} />
-            <Route exact path="/work" element={<WorkPage />} />
-            <Route exact path="/skills" element={<MySkillsPage />} />
+            <Route path="/" element={<Main />} />
 
+            <Route path="/about" element={<AboutPage />} />
+
+            <Route path="/courses" element={<CoursesPage />} />
+
+            <Route path="/work" element={<WorkPage />} />
+
+            <Route path="/skills" element={<MySkillsPage />} />
+
+            {/* Below is to catch all the other routes and send the user to main component,
+you can add custom 404 component or message instead of Main component*/}
             <Route path="*" element={<Main />} />
           </Routes>
         </AnimatePresence>

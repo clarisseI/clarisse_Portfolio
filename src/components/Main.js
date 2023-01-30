@@ -27,7 +27,7 @@ const MainContainer = styled.div`
 const Container = styled.div`
   padding: 2rem;
 `;
-const RESUME = styled(NavLink)`
+const RESUME = styled.a`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 2rem;
@@ -79,10 +79,7 @@ const Main = () => {
 
         <RESUME
           target="_blank"
-          to={{
-            pathname:
-              "https://drive.google.com/file/d/1iyhWwk7K4qsgt4vee9mXBPaeM_dhZMPw/view?usp=sharing",
-          }}
+          href="https://drive.google.com/file/d/1iyhWwk7K4qsgt4vee9mXBPaeM_dhZMPw/view?usp=sharing"
         >
           <motion.h2
             initial={{

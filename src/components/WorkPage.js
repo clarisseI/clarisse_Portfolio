@@ -84,7 +84,7 @@ const WorkPage = () => {
             })}
           </Grid>
         </Center>
-        <BigTitle text="PROJECT" top="5rem" left="5rem" />
+        <BigTitle text="PROJECT" top="5rem" left="15rem" />
       </Container>
     </MainContainer>
   );
