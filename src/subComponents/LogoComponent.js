@@ -1,5 +1,4 @@
 import React from "react";
-//import { Icon } from "../components/AllSvgs";
 import styled from "styled-components";
 import { DarkTheme } from "../components/Themes";
 
@@ -8,6 +7,7 @@ const Logo = styled.h1`
   color: ${(props) =>
     props.color === "dark" ? DarkTheme.text : DarkTheme.body};
   font-family: "Pacifico", cursive;
+
   position: fixed;
   left: 2rem;
   top: 2rem;
@@ -15,7 +15,7 @@ const Logo = styled.h1`
 `;
 
 const LogoComponent = (props) => {
-  return <Logo color={props.theme}>ICU</Logo>;
+  return <Logo color={props.theme}>CI</Logo>;
 };
 
 export default LogoComponent;

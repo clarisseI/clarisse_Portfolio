@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import img from "../Assets/Image/background.jpeg";
 
-import img from "../Assets/Image/pexels-negative-space-169573.jpg";
+import HomeButton from "../subComponents/HomeButton";
 import LogoComponent from "../subComponents/LogoComponent";
 import Social from "../subComponents/Social";
-import HomeButton from "../subComponents/Navigation/HomeButton";
+import SoundBar from "../subComponents/SoundBar";
 
 import { Works } from "../data/workData";
-import workComponent from "../components/workComponent";
-//import workComponent from "../components/workComponent";
-
+import WorkComponent from "./WorkComponent";
 import AnchorComponent from "../subComponents/Anchor";
 import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
 
 const MainContainer = styled(motion.div)`
   background-image: url(${img});
@@ -25,6 +24,7 @@ const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.8)`};
   width: 100%;
   height: auto;
+
   position: relative;
   padding-bottom: 5rem;
 `;
@@ -42,7 +42,6 @@ const Grid = styled.div`
   grid-gap: calc(1rem + 2vw);
 `;
 
-// Framer-motion config
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -54,7 +53,6 @@ const container = {
     },
   },
 };
-
 const WorkPage = () => {
   const [numbers, setNumbers] = useState(0);
 
@@ -75,13 +73,14 @@ const WorkPage = () => {
     >
       <Container>
         <LogoComponent />
+        <SoundBar />
         <HomeButton />
         <Social />
         <AnchorComponent number={numbers} />
         <Center>
           <Grid>
-            {Works.map((Work) => {
-              return <workComponent key={Work.id} work={Work} />;
+            {Works.map((work) => {
+              return <WorkComponent key={work.id} work={work} />;
             })}
           </Grid>
         </Center>

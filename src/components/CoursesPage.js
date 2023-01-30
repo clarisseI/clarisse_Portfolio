@@ -1,11 +1,11 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme } from "./Themes";
-import { Design, Develope } from "./AllSvgs";
-import SoundBar from "../subComponents/Navigation/SoundBar";
+import { Design, Develope } from "../Assets/Svg/AllSvgs";
+import SoundBar from "../subComponents/SoundBar";
 
 import LogoComponent from "../subComponents/LogoComponent";
-import HomeButton from "../subComponents/Navigation/HomeButton";
+import HomeButton from "../subComponents/HomeButton";
 import Social from "../subComponents/Social";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitle";
@@ -118,7 +118,7 @@ const MySkillsPage = () => {
             </ul>
           </Description>
         </Main>
-        <BigTitle text="COURSES" top="76%" left="30%" />
+        <BigTitle text="COURSES" top="80%" left="25%" />
       </Box>
     </ThemeProvider>
   );

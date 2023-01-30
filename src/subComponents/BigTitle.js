@@ -11,7 +11,7 @@ const Text = styled.h1`
   z-index: 0;
 `;
 
-const BigTitle = (props) => {
+const BigTitlte = (props) => {
   return (
     <Text top={props.top} left={props.left} right={props.right}>
       {props.text}
@@ -19,4 +19,4 @@ const BigTitle = (props) => {
   );
 };
 
-export default BigTitle;
+export default BigTitlte;

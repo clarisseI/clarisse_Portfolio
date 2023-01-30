@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import LogoComponent from "../subComponents/LogoComponent";
 import NameAndTitle from "../subComponents/NameAndTitle/NameAndTitle";
-//import { DownBtn } from "./AllSvgs";
-import Intro from "./Intro";
-import HomeButton from "../subComponents/Navigation/HomeButton";
+import HomeButton from "../subComponents/HomeButton";
 import Social from "../subComponents/Social";
 
 const MainContainer = styled.div`
@@ -37,24 +35,7 @@ const RESUME = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
 `;
-const WORK = styled(NavLink)`
-  color: ${(props) => props.theme.text};
-  position: absolute;
-  top: 50%;
-  right: calc(1rem + 2vw);
-  transform: rotate(90deg) translate(-50%, -50%);
-  text-decoration: none;
-  z-index: 1;
-`;
-const COURSES = styled(NavLink)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-  position: absolute;
-  top: 50%;
-  left: calc(1rem + 2vw);
-  transform: translate(-50%, -50%) rotate(-90deg);
-  text-decoration: none;
-  z-index: 1;
-`;
+
 const BottomBar = styled.div`
   position: absolute;
   bottom: 1rem;
@@ -65,8 +46,18 @@ const BottomBar = styled.div`
   justify-content: space-evenly;
 `;
 
+const WORK = styled(NavLink)`
+  color: ${(props) => props.theme.text};
+  text-decoration: none;
+  z-index: 1;
+`;
+const COURSES = styled(NavLink)`
+  color: ${(props) => props.theme.text};
+  text-decoration: none;
+  z-index: 1;
+`;
 const ABOUT = styled(NavLink)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  color: ${(props) => props.theme.text};
   text-decoration: none;
   z-index: 1;
 `;
@@ -75,69 +66,17 @@ const SKILLS = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
 `;
-const rotate = keyframes`
-from{
-    transform: rotatex(0);
-}
-to{
-    transform: rotatey(360deg);
-}
-`;
-
-const Center = styled.button`
-position: absolute;
-top: ${(props) => (props.click ? "85%" : "80%")};
-left: ${(props) => (props.click ? "95%" : "50%")};
-transform: translate(-50%,-50%);
-border: none;
-outline: none;
-background-color: transparent;
-cursor: pointer;
-
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-transition: all 1s ease;
-
-&>:first-child{
-    animation:${rotate} infinite 1.5s linear;
-}
-
-&>:last-child{
-    display: ${(props) => (props.click ? "none" : "inline-block")};
-    padding-top: 1rem
-`;
-const DarkDiv = styled.div`
-  position: absolute;
-  top: 0;
-  background-color: #000;
-  bottom: 0;
-  right: 50%;
-  width: ${(props) => (props.click ? "50%" : "0%")};
-  height: ${(props) => (props.click ? "100%" : "0%")};
-  z-index: 1;
-  transition: height 0.5s ease, width 1s ease 0.5s;
-`;
 
 const Main = () => {
-  const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
-
   return (
     <MainContainer>
-      <DarkDiv click={click} />
       <Container>
         <HomeButton />
-        <LogoComponent theme={click ? "dark" : "light"} />
-        <Social theme={click ? "dark" : "light"} />
+        <LogoComponent />
+        <Social />
 
-        {click ? null : <NameAndTitle click={click} />}
+        <NameAndTitle />
 
-        <Center click={click}>
-          <span onClick={() => handleClick()}> ...</span>
-        </Center>
         <RESUME
           target="_blank"
           to={{
@@ -157,43 +96,12 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Resume..
+            Resume.
           </motion.h2>
         </RESUME>
-        <COURSES to="/courses">
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Courses
-          </motion.h2>
-        </COURSES>
-        <WORK to="/work" click={+click}>
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Work
-          </motion.h2>
-        </WORK>
+
         <BottomBar>
-          <ABOUT to="/about" click={+click}>
+          <ABOUT to="/about">
             <motion.h2
               initial={{
                 y: 200,
@@ -209,6 +117,22 @@ const Main = () => {
               About.
             </motion.h2>
           </ABOUT>
+          <COURSES to="/courses">
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Courses.
+            </motion.h2>
+          </COURSES>
           <SKILLS to="/skills">
             <motion.h2
               initial={{
@@ -222,12 +146,27 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              My Skills.
+              Skills.
             </motion.h2>
           </SKILLS>
+          <WORK to="/work">
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Work.
+            </motion.h2>
+          </WORK>
         </BottomBar>
       </Container>
-      {click ? <Intro click={click} /> : null}
     </MainContainer>
   );
 };

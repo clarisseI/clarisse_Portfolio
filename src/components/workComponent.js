@@ -1,60 +1,90 @@
-import { motion } from "framer-motion";
 import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 
-const Box = styled(motion(NavLink))`
-  width: calc(10rem + 15vw);
-  text-decoration: none;
-  height: 20rem;
+import styled from "styled-components";
+import { Github } from "../Assets/Svg/AllSvgs";
+import { motion } from "framer-motion";
+
+const Container = styled(motion.div)``;
+
+const Box = styled(motion.li)`
+  width: 16rem;
+  height: 40vh;
   padding: 1rem;
+
   color: ${(props) => props.theme.text};
-  border: 2px solid ${(props) => props.theme.text};
+  border: 1px solid ${(props) => props.theme.text};
   backdrop-filter: blur(2px);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+
   cursor: pointer;
+
+  margin-right: 8rem;
+  border-radius: 0 50px 0 50px;
 
   display: flex;
   flex-direction: column;
-  z-index: 5;
+  justify-content: space-between;
+  background-color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
 
+  transition: all 0.2s ease;
   &:hover {
-    color: ${(props) => props.theme.body};
-    background-color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.body};
+    color: ${(props) => props.theme.text};
+
     transition: all 0.3s ease;
   }
 `;
 
-const Name = styled.h3`
-  color: inherit;
-  padding: 0.5rem 0;
-  padding-top: 1rem;
-  font-family: "Karla", sans-serif;
-  font-weight: 700;
-  border-bottom: 1px solid ${(props) => props.theme.text};
+const Title = styled.h2`
+  font-size: calc(1em + 0.5vw);
+`;
 
+const Description = styled.h2`
+  font-size: calc(0.8em + 0.3vw);
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+`;
+const Tags = styled.div`
+  border-top: 2px solid ${(props) => props.theme.body};
+  padding-top: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
   ${Box}:hover & {
-    border-bottom: 1px solid ${(props) => props.theme.body};
+    border-top: 2px solid ${(props) => props.theme.text};
   }
 `;
-const Description = styled.span`
-  padding-right: 0.5rem;
-`;
-
-const HashTags = styled.div`
-  padding: 0.5rem 0;
-`;
 const Tag = styled.span`
-  padding-right: 0.5rem;
+  margin-right: 1rem;
+  font-size: calc(0.8em + 0.3vw);
 `;
 
-const Github = styled.span`
-  padding: 0.5rem 0;
+const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+`;
+const Link = styled.a`
+  background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
+  text-decoration: none;
+  padding: 0.5rem calc(2rem + 2vw);
+  border-radius: 0 0 0 50px;
+  font-size: calc(1em + 0.5vw);
+  ${Box}:hover & {
+    background-color: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.body};
+  }
 `;
 
-const Container = styled(motion.div)``;
-
-// Framer motion configuration
+const Git = styled.a`
+  color: inherit;
+  text-decoration: none;
+  ${Box}:hover & {
+    & > * {
+      fill: ${(props) => props.theme.text};
+    }
+  }
+`;
 const Item = {
   hidden: {
     scale: 0,
@@ -68,22 +98,28 @@ const Item = {
   },
 };
 
-const BlogComponent = (props) => {
-  const { name, description, tags, demo, github } = props.work;
+const WorkComponent = (props) => {
+  const { id, name, description, tags, demo, github } = props.work;
   return (
     <Container variants={Item}>
-      <Box target="_blank" to={{ pathname: demo }}>
-        <Name>{name}</Name>
+      <Box key={id} target="_blank" href={`${demo}`}>
+        <Title>{name}</Title>
         <Description>{description}</Description>
-        <HashTags>
+        <Tags>
           {tags.map((t, id) => {
-            return <Tag key={id}>#{t}</Tag>;
+            return <Tag key={id}> #{t} </Tag>;
           })}
-        </HashTags>
-        <Github>{github}</Github>
+        </Tags>
+        <Footer>
+          <Link href={demo} target="_blank">
+            Visit
+          </Link>
+          <Git href={github} target="_blank">
+            <Github width={30} height={30} />
+          </Git>
+        </Footer>
       </Box>
     </Container>
   );
 };
-
-export default BlogComponent;
+export default WorkComponent;

@@ -1,18 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import App from "./App";
 
-import App from './App';
+import "normalize.css";
 
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    
-    <BrowserRouter>
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
+  <BrowserRouter>
     <App />
   </BrowserRouter>
-   
-  </React.StrictMode>,
-  document.getElementById('root')
 );
-

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-//import { NavLink } from "react-router-dom";
-import { Github, Gmail, Linkedin } from "../components/AllSvgs";
+import { Github, Gmail, Linkedin } from "../Assets/Svg/AllSvgs";
 import styled from "styled-components";
 import { DarkTheme } from "../components/Themes";
 

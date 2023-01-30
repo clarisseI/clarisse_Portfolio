@@ -2,13 +2,12 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
 
-import HomeButton from "../subComponents/Navigation/HomeButton";
+import HomeButton from "../subComponents/HomeButton";
 import Social from "../subComponents/Social";
 import ParticleComponent from "../subComponents/ParticleComponent";
-import SoundBar from "../subComponents/Navigation/SoundBar";
-
+import LogoComponent from "../subComponents/LogoComponent";
+import SoundBar from "../subComponents/SoundBar";
 import BigTitle from "../subComponents/BigTitle";
-//import NavigationPage from "./NavigationPage";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -27,7 +26,7 @@ const Main = styled.div`
   background-color: ${(props) => props.theme.body};
   padding: 1.5rem;
   width: 30vw;
-  height: 60vh;
+  height: 50vh;
   z-index: 2;
   line-height: 1;
   cursor: pointer;
@@ -80,8 +79,10 @@ const AboutPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Box>
+        <LogoComponent theme="dark" />
         <Social theme="dark" />
         <HomeButton />
+
         <ParticleComponent theme="dark" />
 
         <Main>
@@ -113,7 +114,7 @@ const AboutPage = () => {
             environment.
           </Description>
         </Main>
-        <BigTitle text="SKILLS" top="80%" right="30%" />
+        <BigTitle text="ABOUT" top="65%" right="30%" />
       </Box>
       <SoundBar />
     </ThemeProvider>

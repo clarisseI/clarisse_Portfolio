@@ -1,14 +1,14 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme } from "./Themes";
-import { Design, Develope } from "./AllSvgs";
+import { DarkTheme } from "./Themes";
+import { Design, Develope } from "../Assets/Svg/AllSvgs";
 
 import LogoComponent from "../subComponents/LogoComponent";
-
+import SoundBar from "../subComponents/SoundBar";
 import ParticleComponent from "../subComponents/ParticleComponent";
 
 import Social from "../subComponents/Social";
-import HomeButton from "../subComponents/Navigation/HomeButton";
+import HomeButton from "../subComponents/HomeButton";
 import BigTitle from "../subComponents/BigTitle";
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -79,12 +79,13 @@ const Description = styled.div`
 
 const MySkillsPage = () => {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={DarkTheme}>
       <Box>
-        <LogoComponent theme="light" />
-        <Social theme="light" />
+        <LogoComponent theme="dark" />
+        <SoundBar theme="dark" />
+        <Social theme="dark" />
         <HomeButton />
-        <ParticleComponent theme="light" />
+        <ParticleComponent theme="dark" />
         <Main>
           <Title>
             <Design width={40} height={40} /> Backend Developer

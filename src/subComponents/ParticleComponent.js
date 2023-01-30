@@ -1,10 +1,9 @@
-import React from "react";
-import Particles from "react-particles-js";
 import styled from "styled-components";
-import { loadFull } from "tsparticles";
-
 import configDark from "../config/particlesjs-config.json";
 import configLight from "../config/particlesjs-config-light.json";
+
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 const Box = styled.div`
   position: absolute;
