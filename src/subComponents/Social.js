@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Github, Gmail, Linkedin } from "../Assets/Svg/AllSvgs";
+
+import { Github, Linkedin, Gmail } from "../Assets/Svg/AllSvgs";
 import styled from "styled-components";
 import { DarkTheme } from "../components/Themes";
 
@@ -8,9 +9,11 @@ const Icons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   position: fixed;
   bottom: 0;
   left: 2rem;
+
   z-index: 3;
 
   & > *:not(:last-child) {
@@ -29,7 +32,7 @@ const Social = (props) => {
   return (
     <Icons>
       <motion.div
-        initial={{ transform: "scale(0)" }}
+        initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1 }}
       >
@@ -47,9 +50,9 @@ const Social = (props) => {
       </motion.div>
 
       <motion.div
-        initial={{ transform: "scale(0)" }}
+        initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
       >
         <a
           style={{ color: "inherit" }}
@@ -65,9 +68,9 @@ const Social = (props) => {
       </motion.div>
 
       <motion.div
-        initial={{ transform: "scale(0)" }}
+        initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
       >
         <a
           style={{ color: "inherit" }}

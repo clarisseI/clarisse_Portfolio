@@ -6,6 +6,7 @@ import LogoComponent from "../subComponents/LogoComponent";
 import NameAndTitle from "../subComponents/NameAndTitle/NameAndTitle";
 import HomeButton from "../subComponents/HomeButton";
 import Social from "../subComponents/Social";
+import Resume from "../Assets/Resume/UmulisaResume.pdf";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -77,10 +78,7 @@ const Main = () => {
 
         <NameAndTitle />
 
-        <RESUME
-          target="_blank"
-          href="https://drive.google.com/file/d/1iyhWwk7K4qsgt4vee9mXBPaeM_dhZMPw/view?usp=sharing"
-        >
+        <RESUME target="_blank" href={`${Resume}`}>
           <motion.h2
             initial={{
               y: -200,

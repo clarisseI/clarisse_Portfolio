@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import img from "../Assets/Image/background.jpeg";
+import img from "../Assets/Image/background.webp";
 
 import HomeButton from "../subComponents/HomeButton";
 import LogoComponent from "../subComponents/LogoComponent";
