@@ -6,7 +6,7 @@ import LogoComponent from "../subComponents/LogoComponent";
 import NameAndTitle from "../subComponents/NameAndTitle/NameAndTitle";
 import HomeButton from "../subComponents/HomeButton";
 import Social from "../subComponents/Social";
-import Resume from "../Assets/Resume/UmulisaResume.pdf";
+import Resume from "../Assets/Resume/Clarisse_Umulisa_Resume.pdf";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
