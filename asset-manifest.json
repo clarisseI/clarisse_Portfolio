@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/clarisse_Portfolio/static/css/main.58462fbc.css",
-    "main.js": "/clarisse_Portfolio/static/js/main.85186bbd.js",
+    "main.js": "/clarisse_Portfolio/static/js/main.93917208.js",
     "static/media/soul.mp3": "/clarisse_Portfolio/static/media/soul.b67483d0cf4f00dfba9c.mp3",
     "static/media/background.webp": "/clarisse_Portfolio/static/media/background.1356f452b5de7ecd6a8b.webp",
     "static/media/UmulisaResume.pdf": "/clarisse_Portfolio/static/media/UmulisaResume.3235b6c81bf1ce9eea5d.pdf",
     "index.html": "/clarisse_Portfolio/index.html",
     "main.58462fbc.css.map": "/clarisse_Portfolio/static/css/main.58462fbc.css.map",
-    "main.85186bbd.js.map": "/clarisse_Portfolio/static/js/main.85186bbd.js.map"
+    "main.93917208.js.map": "/clarisse_Portfolio/static/js/main.93917208.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.85186bbd.js"
+    "static/js/main.93917208.js"
   ]
 }
