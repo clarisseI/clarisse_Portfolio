@@ -8,7 +8,7 @@ import Social from "../subComponents/Social";
 import SoundBar from "../subComponents/SoundBar";
 
 import { Works } from "../data/workData";
-import WorkComponent from "./WorkComponent";
+import WorkComponent from "./workComponent";
 import AnchorComponent from "../subComponents/Anchor";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
